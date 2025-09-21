@@ -1,0 +1,28 @@
+{
+  "name": "venmorph-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for Venmorph",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:flare": "hardhat run scripts/deploy.js --network flare",
+    "deploy:coston2": "hardhat run scripts/deploy.js --network coston2"
+  },
+  "dependencies": {
+    "@flare-network/flare-periphery-contract-artifacts": "^1.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@typechain/ethers-v5": "^10.2.1",
+    "@typechain/hardhat": "^6.1.6",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^4.0.10",
+    "hardhat": "^2.17.2",
+    "typechain": "^8.3.1"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "venmorph",
+  "version": "1.0.0",
+  "description": "Venmo-style payment requests using Flare oracles & XRPL settlement",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../contracts && npm install && cd ../attestor && npm install",
+    "dev": "concurrently \"npm run contracts:dev\" \"npm run backend:dev\" \"npm run frontend:dev\" \"npm run attestor:dev\"",
+    "start": "concurrently \"npm run backend:start\" \"npm run frontend:start\"",
+    "build": "cd frontend && npm run build",
+    "test": "npm run contracts:test && npm run backend:test && npm run frontend:test",
+    "contracts:compile": "cd contracts && npx hardhat compile",
+    "contracts:test": "cd contracts && npx hardhat test",
+    "contracts:deploy:local": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "contracts:deploy:coston2": "cd contracts && npx hardhat run scripts/deploy.js --network coston2",
+    "contracts:deploy:flare": "cd contracts && npx hardhat run scripts/deploy.js --network flare",
+    "contracts:dev": "cd contracts && npx hardhat node",
+    "frontend:dev": "cd frontend && npm start",
+    "frontend:start": "cd frontend && npm run build && npx serve -s build -l 3000",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:test": "cd frontend && npm test -- --watchAll=false",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:test": "cd backend && npm test",
+    "attestor:dev": "cd attestor && npm run dev",
+    "attestor:start": "cd attestor && npm start",
+    "attestor:test": "cd attestor && npm test",
+    "setup": "npm run install-all && npm run contracts:compile",
+    "demo": "npm run contracts:deploy:local && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "workspaces": [
+    "frontend",
+    "backend", 
+    "contracts",
+    "attestor"
+  ],
+  "keywords": [
+    "web3",
+    "flare",
+    "xrpl",
+    "payment",
+    "oracles",
+    "defi",
+    "hackathon"
+  ],
+  "author": "Venmorph Team",
+  "license": "MIT"
+}

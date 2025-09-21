@@ -1,0 +1,23 @@
+{
+  "name": "venmorph-attestor",
+  "version": "1.0.0",
+  "description": "XRPL payment attestor for Venmorph",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.2",
+    "xrpl": "^2.11.0",
+    "ws": "^8.13.0",
+    "node-cron": "^3.0.2",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.1"
+  }
+}
